@@ -1,0 +1,169 @@
+:root {
+  --primary: #2D1160;
+  --primary-bg: #252746;
+  --primary-lg: #9C75E7;
+  --color-hover: #36396A;
+  --wh: #E2E1F0;
+  --bl: #000000;
+
+  --raleway: 'Raleway', sans-serif;
+}
+
+body {
+  font: 400 normal 16px/1.5 var(--raleway), sans-serif;
+  background-color: var(--primary-bg);
+  color: var(--wh);
+}
+
+.container {
+  max-width: 1740px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-base {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.caption {
+  font: 600 normal 64px/normal var(--raleway), sans-serif;
+  color: var(--wh);
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 19px 40px;
+  text-align: center;
+  font-size: clamp(20px, 2vw, 16px);
+  line-height: normal;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: var(--primary);
+  background-color: var(--primary-lg);
+  border: 1px solid var(--primary-lg);
+  transition: all .3s ease
+}
+
+.btn:hover {
+  border-color: var(--primary-lg);
+  background-color: var(--color-hover);
+  color: var(--wh)
+}
+
+.mb-100 {
+  margin-bottom: clamp(100px, 5vw, 80px);
+}
+
+.site {
+  margin-bottom: clamp(100px, 5vw, 80px);
+}
+
+.site__caption {
+  margin-bottom: 50px;
+}
+
+.diana {
+  font-size: 40px;
+  text-align: center;
+}
+
+.diana a:hover {
+  color: var(--primary-lg)
+}
+
+.site__items {
+  gap: 20px;
+}
+
+.site__item {
+  position: relative;
+  flex-basis: 415px;
+  padding: 60px 29px;
+  overflow: hidden;
+  border: 1px solid var(--primary-lg);
+  border-radius: 10px;
+}
+
+.site__item::before {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  top: var(--y);
+  left: var(--x);
+  transform: translate(-50%, -50%);
+  background: radial-gradient(var(--clr), #ffffff75, transparent);
+  width: 600px;
+  height: 600px;
+  opacity: 0;
+  transition: .5s, top 0s, left 0s
+}
+
+.site__item:hover:before {
+  opacity: 1;
+}
+
+.site__item::after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  background: var(--primary-bg);
+  inset: 1px;
+  border-radius: 10px
+}
+
+.site__item-title {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.site__item-text {
+  max-width: 306px;
+  min-height: 96px;
+  margin-bottom: 50px;
+}
+
+.site__item-time {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.site__item-price {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.site__item-btn {
+  width: 100%;
+}
+
+
+
+@media (max-width: 1370px) {
+  .btn {
+    font-size: 18px;
+  }
+
+  .site__item-title {
+    font-size: 22px;
+  }
+
+  .site__item-text {
+    min-height: 120px;
+  }
+}
